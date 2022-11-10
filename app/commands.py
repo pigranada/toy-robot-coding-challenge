@@ -55,4 +55,4 @@ class RightCommand(Command):
 class ReportCommand(Command):
     
     def invoke(self, robot: Robot):
-        robot.report()
+        print(robot.report())

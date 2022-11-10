@@ -1,3 +1,6 @@
+from __future__ import annotations
+from .types.facing_enum import Facing
+
 class Location:
     __x_location = None
     __y_location = None
@@ -17,3 +20,21 @@ class Location:
         Get the y location.
         """
         return self.__y_location
+
+    def get_simulated_next_location(self, facing: Facing) -> Location:
+        x = self.__x_location
+        y = self.__y_location
+
+        if facing == Facing.NORTH:
+            y += 1
+
+        if facing == Facing.EAST:
+            x += 1
+
+        if facing == Facing.SOUTH:
+            y -= 1
+
+        if facing == Facing.WEST:
+            x -= 1
+
+        return Location(x,y)

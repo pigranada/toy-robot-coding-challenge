@@ -13,7 +13,6 @@ class Application:
 
     def start_using_command_line(self) -> None:
         """Start the toy robot application using input from command line"""
-
         while True:
             command = input()
             self.__simulator.process(command)
